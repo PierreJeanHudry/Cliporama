@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.stage.Stage;
 
+@SuppressWarnings("restriction")
 public class Main extends Application {
 
 	public static void main(String[] args) {

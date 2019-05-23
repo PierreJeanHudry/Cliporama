@@ -26,6 +26,7 @@ import javafx.util.Duration;
 /**
  * Gestion de l'interface graphique et de l'animation
  */
+@SuppressWarnings("restriction")
 public class LanceurCtrl{
 	private File srt;
 	private File audio;
@@ -61,7 +62,6 @@ public class LanceurCtrl{
     	 */
     	monBouton.setOnAction(new EventHandler<ActionEvent>() {	//Si le bouton est cliqué, le traitement sur SRT est lancé, l'audio et l'animation sont lancés dans la fenetre
 
-			@Override
 			public void handle(ActionEvent event) {
 				if (flag>1){
 					Srt test = new Srt(srt.getPath());
@@ -78,7 +78,6 @@ public class LanceurCtrl{
     	 * Permet de préremplir rapidement les champs avec des fichiers de tests rapides
     	 */
     	butTest.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent event) {
 				//Permet de mettre des fichiers de test dans la racine
 				audio= new File("data/musiques/Gorillaz.mp3");
@@ -95,7 +94,6 @@ public class LanceurCtrl{
     	 * Ouvre une au clic une fenetre de dialogue pour sélectionner un fichier mp3
     	 */
     	butAudio.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent event) {
 				//Permet de mettre le fichier audio dans la racine
 				Stage stagemp3= new Stage();
@@ -116,7 +114,6 @@ public class LanceurCtrl{
     	 * Ouvre une au clic une fenetre de dialogue pour sélectionner un fichier srt
     	 */
     	butSrt.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
 			public void handle(ActionEvent event) {
 				//Permet de mettre le fichier srt dans la rscine
 				Stage stagesrt= new Stage();
@@ -157,21 +154,21 @@ public class LanceurCtrl{
 	    stage.setResizable(false);
 
 	    //Création de l'arborescence d'un groupe : 			//root-->scene-->ImageView-->fondImage-->fond
-	    Group root = new Group();							//			  -->ImageView-->Image
+	    final Group root = new Group();							//			  -->ImageView-->Image
 	    Scene scene = new Scene(root);
 	    File fond = new File("data/fond/fond.gif");
 	    Image fondImage = new Image(fond.toURI().toString(), WIDTH, HEIGHT, false, false);
 	    root.getChildren().add(new ImageView(fondImage));
 
 	    //Mise en place des sous-titres basé sur les mots des gifs
-	    Text mots = new Text();
+	    final Text mots = new Text();
 	    mots.setX(WIDTH/3);
 	    mots.setY(HEIGHT-25);
 	    mots.setFont(new Font(50));
 	    root.getChildren().add(mots);
 
 	    Iterator<Mot> it=lyrics.iterator();
-	    LinkedList<Imagif> images= new LinkedList<Imagif>();
+	    final LinkedList<Imagif> images= new LinkedList<Imagif>();
         int margeBas = 50;
 	    while (it.hasNext()) {		//Boucle faisant charger les images et leurs paramètres dans la liste images
     		Mot m = it.next();
@@ -192,7 +189,7 @@ public class LanceurCtrl{
 	    stage.show();
 
 	    //Fait un tableau FIFO pour les gifs afin de n'en garder que 5 à l'écran  *Stack pour LIFO*
-	    Queue<ImageView> queue = new ArrayBlockingQueue<>(5);
+	    final Queue<ImageView> queue = new ArrayBlockingQueue<>(5);
 
 
 	   /**
@@ -217,7 +214,7 @@ public class LanceurCtrl{
 	        			  //si la queue (FIFO) est déjà pleine
 		        		  if(queue.size() == 5) {
 		        			  //on ajoute un effet de fondu à l'image sortante
-		        			  ImageView aSupprimer = queue.poll();
+		        			  final ImageView aSupprimer = queue.poll();
 
 		        			  FadeTransition ft = new FadeTransition(Duration.millis(1500), aSupprimer);
 		        			  ft.setFromValue(1.0); //valeur de départ pour le fondu (1 pour ne pas être fondu du tout)

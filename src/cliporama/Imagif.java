@@ -6,6 +6,7 @@ import javafx.scene.image.ImageView;
 /**
  * Classe définissant un objet composé d'un mot, d'une image, d'une position et d'un temps
  */
+@SuppressWarnings("restriction")
 public class Imagif {
 	private String mot;
 	private Image image;
