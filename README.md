@@ -24,10 +24,10 @@ Version fonctionnelle : jdk1.8.0_171
 * Configure Build Path
 * Add .jar
 * Se balader dans les dossiers
-* pour nous: Projet --> PRO3600/git/PRO3600-18-LAL-12/lib
+* pour nous: Projet --> */Cliporama/lib
 ```
 		
-* Pour changer le fond du clip : Changer le gif dans PRO3600/git/PRO3600-18-LAL-12/data/fond/fond.gif en gardant bien le même nom
+* Pour changer le fond du clip : Changer le gif dans ../Cliporama/data/fond/fond.gif en gardant bien le même nom
 
 * Temps de chargement important au démarrage dû au redimenssionnement de toutes les images/gifs
 
