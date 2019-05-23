@@ -70,8 +70,7 @@ On va donc augmenter la capacité allouée à eclipse en faisant une nouvelle co
 ## Pour gérer les problèmes de détection de mot
 
 Il est possible que les mots dans les fichiers .srt soient lus sans les espaces et mal encodés, si c'est le cas :
-WIndows->preferences
-General->workspace->text file encoding
+
 ```
 * Windows -> Preferences
 * General -> Workspace
