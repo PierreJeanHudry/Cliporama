@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="420.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cliporama.LanceurCtrl">
+   <children>
+      <Button fx:id="monBouton" layoutX="16.0" layoutY="247.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="801.0" text="Lancer Cliporama">
+         <font>
+            <Font name="LKLUG" size="69.0" />
+         </font>
+      </Button>
+      <Button fx:id="butSrt" layoutX="313.0" layoutY="137.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="203.0" text="Choisir SRT" />
+      <Button fx:id="butAudio" layoutX="313.0" layoutY="42.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="203.0" text="Choisir audio" />
+      <Button fx:id="butTest" layoutX="32.0" layoutY="88.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="203.0" text="test" />
+      <TextArea fx:id="txtAudio" editable="false" layoutX="556.0" layoutY="66.0" prefHeight="26.0" prefWidth="189.0" />
+      <TextArea fx:id="txtSrt" editable="false" layoutX="556.0" layoutY="161.0" prefHeight="26.0" prefWidth="189.0" />
+   </children>
+</AnchorPane>
